@@ -15,6 +15,7 @@ import { connectDB } from "./config/configDB.js";
 // Importa la funcion para crear roles y usuarios
 import { createRoles, createUsers } from "./config/initSetup.js";
 
+import insumosRoutes from "./routes/insumos.routes.js";
 /**
  * Inicia el servidor web
 */
@@ -42,6 +43,10 @@ async function setupServer() {
     app.use(morgan("dev"));
     // Agrega el enrutador principal al servidor
     app.use("/api", indexRoutes);
+
+    //CAMBIO JOHN
+    app.use("/api", insumosRoutes);
+    //CAMBIO JOHN
 
     // Inicia el servidor en el puerto especificado
     app.listen(PORT, () => {
