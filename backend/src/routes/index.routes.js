@@ -11,6 +11,8 @@ import authRoutes from "./auth.routes.js";
 /** Enrutador de dispositivos */
 import deviceRoutes from "./device.routes.js";
 
+import supplyRoutes from "./supplyRoutes.js";
+
 // Se realiza una instancia de express
 const router = Router();
 
@@ -20,5 +22,7 @@ router.use("/user",  userRoutes);
 router.use("/auth", authRoutes);
 // Define las rutas para los dispositivos /api/device
 router.use("/device", deviceRoutes);
+// Define las rutas para los insumos /api/supply
+router.use("/supply", supplyRoutes);
 
 export default router;

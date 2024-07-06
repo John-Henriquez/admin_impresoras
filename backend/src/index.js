@@ -14,6 +14,10 @@ import indexRoutes from "./routes/index.routes.js";
 import { connectDB } from "./config/configDB.js";
 // Importa la funcion para crear roles y usuarios
 import { createRoles, createUsers } from "./config/initSetup.js";
+// Importa el middleware para el manejo de errores
+import { errorHandler } from "./middlewares/errorHandler.js";
+// Importa las rutas del CRUD de insumos de impresión
+import supplyRoutes from "./routes/supplyRoutes.js";
 
 /**
  * Inicia el servidor web
@@ -42,6 +46,10 @@ async function setupServer() {
     app.use(morgan("dev"));
     // Agrega el enrutador principal al servidor
     app.use("/api", indexRoutes);
+    // Agrega las rutas del CRUD de insumos de impresión
+    app.use("/api", supplyRoutes);
+    // Agrega el middleware para el manejo de errores
+    app.use(errorHandler);
 
     // Inicia el servidor en el puerto especificado
     app.listen(PORT, () => {

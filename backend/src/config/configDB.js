@@ -12,7 +12,7 @@ import { DB_URL } from "./configEnv.js";
 
 export async function connectDB() { 
     try { 
-        await connect(DB_URL); 
+        await connect(DB_URL);
         console.log("Base de datos conectada exitosamente!"); 
     } catch (error) {
         console.log("Error en configDB.js -> connectDB(): ", error);

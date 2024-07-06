@@ -3,7 +3,6 @@
 import Role from "../models/role.model.js";
 // Importa el modelo de datos 'User'
 import User from "../models/user.model.js";
-
 /**
  * Crea los roles por defecto en la base de datos.
  * @async
