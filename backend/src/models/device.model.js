@@ -1,6 +1,5 @@
 // Importa el modulo 'mongoose' para crear la conexion a la base de datos
 import { Schema, model } from "mongoose";
-import IMP_ESTADOS from "../constants/device.constants.js";
 
 // Crea el esquema de la coleccion 'devices'
 const deviceSchema = new Schema(
@@ -9,26 +8,28 @@ const deviceSchema = new Schema(
       type: Number,
       required: true,
     },
-    name: {
+    type: {
       type: String,
+      enum: ["fotocopiadora", "impresora", "multifuncional"],
       required: true,
     },
     model: {
       type: String,
       required: true,
     },
-    serialnumber: {
+    modelnumber: {
       type: String,
       required: true,
     },
     status: {
       type: String,
-      enum: IMP_ESTADOS,
+      enum: ["funcional", "defectuosa", "reparacion"],
+      default: "funcional",
       required: true,
     },
   },
   {
-    versionKey: false,
+    versionKey: false, // No se muestra el campo "__v" en la respuesta de la API
   },
 );
 
