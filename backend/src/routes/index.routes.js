@@ -13,6 +13,9 @@ import deviceRoutes from "./device.routes.js";
 
 import supplyRoutes from "./supplyRoutes.js";
 
+/** Enrutador de impresiones  */
+import printRoutes from './print.routes.js';
+
 // Se realiza una instancia de express
 const router = Router();
 
@@ -24,5 +27,7 @@ router.use("/auth", authRoutes);
 router.use("/device", deviceRoutes);
 // Define las rutas para los insumos /api/supply
 router.use("/supply", supplyRoutes);
+// Define las rutas para las impresiones /api/prints
+router.use('/prints', printRoutes)
 
 export default router;
