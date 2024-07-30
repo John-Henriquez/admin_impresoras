@@ -325,6 +325,7 @@ body {
 
 .main-container {
     display: flex;
+	flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -332,6 +333,15 @@ body {
 }
 
 .search-container {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 10px;
+	margin-left: 22%;
+  }
+
+  .create-container {
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
@@ -355,6 +365,32 @@ body {
 	background-color: #002651;
 	color: white;
 	outline: none;
+  }
+
+  .create-button {
+	width: 100%;
+	padding: 8px 16px;
+	border-radius: 20px;
+	border: 1px solid #ccc;
+	font-size: 16px;
+	background-color: #00bb00;
+	color: white;
+	outline: none;
+	width: 200px;
+	cursor: pointer;
+  }
+
+  .edit-button {
+	width: 100%;
+	padding: 8px 16px;
+	border-radius: 20px;
+	border: 1px solid #ccc;
+	font-size: 16px;
+	background-color: #003366;
+	color: white;
+	outline: none;
+	width: 200px;
+	cursor: pointer;
   }
   
   .search-input::placeholder {
@@ -387,3 +423,75 @@ body {
 	width: 100%;
 	max-width: 500px;
   }
+
+  .device-table {
+	background-color: #eef7ff;
+	padding: 6.5vh;
+	display: flex;
+	flex-direction: column;
+	border-radius: 24px;
+	align-items: center;
+	h1 {
+		color: #003366;
+		font-size: 30px;
+		font-weight: bold;
+		margin: 0;
+		margin-bottom: 3vh;
+	}
+	div {
+		display: flex;
+	}
+	label {
+		color: #003366;
+		font-weight: bold;
+		margin-bottom: 0.5vh;
+	}
+	input {
+		display: flex;
+		border: 3px solid #003366;
+		border-radius: 12px;
+		padding: 8px 5px;
+		margin-bottom: 1vh;
+		font-weight: regular;
+		font-size: 16px;
+		color: #003366;
+		border-radius: 12px;
+	}
+	input::placeholder {
+		color: rgba(0, 51, 102, 0.3);
+		font-weight: light;
+	}
+	input:focus {
+		background-color: rgba(0, 110, 223, 0.14);
+		font-weight: regular;
+	}
+	button {
+		padding: auto;
+		display: flex;
+		justify-content: center;
+		padding: 1.2vh 0;
+		border-radius: 12px;
+		border: none;
+		width: 100%;
+		background-color: #003366;
+		color: #eef7ff;
+		font-weight: bold;
+		font-size: 16px;
+		border: 3px solid #003366;
+		margin-top: 10px;
+	}
+	button:hover{
+		border: 3px solid #003366;
+		background-color: #eef7ff;
+		color: #003366;
+		transition: .3s ease-out;
+	}
+	div {
+		display: flex;
+		flex-direction: column;
+		p {
+			margin: 0;
+			padding: 2vh 0 0 0;
+		}
+	}
+}
