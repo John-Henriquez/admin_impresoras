@@ -26,15 +26,26 @@ const Navbar = () => {
                         alt="Logo metodología de desarrollo"
                     />
                 </li>
-                <li className={location.pathname === "/inicio" ? "active" : ""}>
+                <li className={location.pathname === "/home" ? "active" : ""}>
                     <NavLink to="/home">Inicio</NavLink>
                 </li>
                 {userRole === 'administrador' && (
-                    <li className={location.pathname === "/usuarios" ? "active" : ""}>
-                        <NavLink to="/users">Usuarios</NavLink>
-                    </li>
+                    <>
+                        <li className={location.pathname === "/users" ? "active" : ""}>
+                            <NavLink to="/users">Usuarios</NavLink>
+                        </li>
+                        <li className={location.pathname === "/devices" ? "active" : ""}>
+                            <NavLink to="/devices">Devices</NavLink>
+                        </li>
+                        <li className={location.pathname === "/prints" ? "active" : ""}>
+                            <NavLink to="/prints">Prints</NavLink>
+                        </li>
+                        <li className={location.pathname === "/supplies" ? "active" : ""}>
+                            <NavLink to="/supplies">Supplies</NavLink>
+                        </li>
+                    </>
                 )}
-                <li className={location.pathname === "/perfil" ? "active" : ""}>
+                <li className={location.pathname === "/profile" ? "active" : ""}>
                     <NavLink to="/profile">Perfil</NavLink>
                 </li>
                 <li className={location.pathname === "/" ? "active" : ""}>

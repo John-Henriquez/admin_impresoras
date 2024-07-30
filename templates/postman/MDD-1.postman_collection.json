@@ -26,7 +26,7 @@
 						"url": {
 							"raw": "{{URL}}/auth/login",
 							"host": [
-								"{{URL}}"
+								"{{http://localhost:5000}}"
 							],
 							"path": [
 								"auth",
