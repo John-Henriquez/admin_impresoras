@@ -13,6 +13,9 @@ import Prints from './pages/Prints';
 import AllPrints from './pages/AllPrints';
 import CreateDevice from './pages/CreateDevice';
 import CreatePrint from './pages/CreatePrint';
+import GetPrint from './pages/GetPrint';
+import UpdatePrint from './pages/UpdatePrint';
+import DeletePrint from './pages/DeletePrint';
 import Supplies from './pages/Supplies';
 import AllSupplies from './pages/AllSupplies';
 import CreateSupplies from './pages/CreateSupplies';
@@ -103,6 +106,30 @@ const AppRouter = () => {
         element={
           <ProtectedRoute allowedRoles={['administrador']}>
             <CreatePrint />
+          </ProtectedRoute>
+        } 
+      />
+       <Route 
+        path="/GetPrint" 
+        element={
+          <ProtectedRoute>
+            <GetPrint />
+          </ProtectedRoute>
+        } 
+      />
+      <Route 
+        path="/UpdatePrint" 
+        element={
+          <ProtectedRoute>
+            <UpdatePrint />
+          </ProtectedRoute>
+        } 
+      />
+      <Route 
+        path="/DeletePrint" 
+        element={
+          <ProtectedRoute>
+            <DeletePrint />
           </ProtectedRoute>
         } 
       />
