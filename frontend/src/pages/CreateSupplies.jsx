@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Form, useNavigate } from 'react-router-dom';
 import Navbar from "../components/Navbar";
 import { createSupplies } from '../services/supplies.service';
 
@@ -35,14 +35,16 @@ const CreateSupplies = () => {
     return (
         <main className="create_supplies_page">
             <Navbar />
-            <div className="sections">
-                <h1>Crear un nuevo suministro</h1>
+            <div className="form-container">
+                <div className='form-wrapper'>
+                    <h1>Crear un nuevo suministros</h1>
                 {error && (
                     <div className="error">
                         <p>{error.message}</p>
                         <pre>{JSON.stringify(error, null, 2)}</pre>
                     </div>
                 )}
+                </div>
                 <form onSubmit={handleSubmit}>
                     <div>
                         <label>ID</label>

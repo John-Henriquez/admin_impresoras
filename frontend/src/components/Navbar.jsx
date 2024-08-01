@@ -41,7 +41,7 @@ const Navbar = () => {
                             <NavLink to="/prints">Prints</NavLink>
                         </li>
                         <li className={location.pathname === "/supplies" ? "active" : ""}>
-                            <NavLink to="/supplies">Supplies</NavLink>
+                            <NavLink to="/supplies">Suministros</NavLink>
                         </li>
                     </>
                 )}
