@@ -1,6 +1,7 @@
-import React from 'react';
+import deleteIcon from '../assets/deleteIcon.svg';
+import updateIcon from '../assets/updateIcon.svg';
 
-const TableSupplies = ({ columns, data }) => {
+const TableSupplies = ({ columns, data, onDelete, onEdit}) => {
     const totalRows = 7;
     const numEmptyRows = totalRows - (data.length > 0 ? data.length : 1);
 
@@ -24,11 +25,28 @@ const TableSupplies = ({ columns, data }) => {
             data.map((row, index) => (
                 <tr key={index}>
                     {columns.map((columns) => (
-                    <td key={columns.accessor}>
-                      {row[columns.accessor]} 
-                    </td>
-                    ))}
-                </tr>
+                      <td key={columns.a}>
+                          {columns.accessor === 'Acción' ? (
+                          <>
+                            <img 
+                              src={updateIcon} 
+                              alt="Editar" 
+                              style={{ marginRight: '10px', cursor: 'pointer', width: '24px', height: '24px' }}
+                              onClick={() => onEdit(row)}
+                            />
+                              <img 
+                                src={deleteIcon} 
+                                alt="Eliminar" 
+                                style={{ cursor: 'pointer', width: '24px', height: '24px' }} 
+                                onClick={() => onDelete(row)}
+                              />
+                          </>
+                          ) : (
+                            row[columns.accessor]
+                          )}
+                      </td>
+                      ))}
+                  </tr>
             ))
         )}
           {Array.from({ length: numEmptyRows }).map((_, index) => (
