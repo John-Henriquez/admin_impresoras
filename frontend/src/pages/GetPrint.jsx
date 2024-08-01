@@ -1,7 +1,6 @@
-// src/pages/GetPrint.jsx
 import React, { useState } from 'react';
 import Navbar from "../components/Navbar";
-import { getPrintByUserRutOrId } from '../services/print.service';
+import { getPrint } from '../services/print.service';
 
 const GetPrint = () => {
     const [identifier, setIdentifier] = useState(''); // estado para almacenar el RUT o ID del usuario
@@ -12,7 +11,7 @@ const GetPrint = () => {
     const fetchPrint = async () => {
         setLoading(true);
         try {
-            const data = await getPrintByUserRutOrId(identifier); // llama a la función getPrint del servicio
+            const data = await getPrint(identifier); // llama a la función getPrint del servicio
             if (Array.isArray(data.data)) {
                 setPrintData(data.data);
             } else if (Array.isArray(data)) {

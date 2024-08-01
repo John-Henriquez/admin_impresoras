@@ -29,7 +29,7 @@ export async function getPrints() {
 }
 
 // Función para obtener impresiones por RUT o ID
-export async function getPrintByUserRutOrId(identifier) {
+export async function getPrint(identifier) {
     try {
         const config = {
             headers: {
@@ -40,8 +40,8 @@ export async function getPrintByUserRutOrId(identifier) {
                 id: identifier
             }
         };
-        // Usar la ruta '/api/prints/1' ya que no podemos cambiar el backend
-        const { data } = await axios.get('/prints/${identifier}', config);
+        
+        const { data } = await axios.get('/prints/1', config);
         return data;
     } catch (error) {
         throw error.response?.data || error.message;
@@ -49,14 +49,17 @@ export async function getPrintByUserRutOrId(identifier) {
 }
 
 // Función para actualizar una impresión
-export async function updatePrint(id, updatedData) {
+export async function updatePrint(identifier, updatedData) {
     try {
         const config = {
             headers: {
                 'Cache-Control': 'no-cache'
+            },
+            params: {
+                id: identifier
             }
         };
-        const { data } = await axios.put(`/prints/${id}`, updatedData, config);
+        const { data } = await axios.put(`/prints/${identifier}`, updatedData, config);
         return data;
     } catch (error) {
         throw error.response?.data || error.message;
@@ -64,14 +67,18 @@ export async function updatePrint(id, updatedData) {
 }
 
 // funcion para eliminar una impresion
-export async function deletePrint(id) {
+export async function deletePrint(identifier) {
     try {
         const config = {
             headers: {
                 'Cache-Control': 'no-cache'
+            },
+            params: {
+                id: identifier // Esto está más para una eventual corrección en el backend.
             }
         };
-        const { data } = await axios.delete(`/prints/${id}`, config);
+        // Realizamos la solicitud de eliminación a la ruta fija
+        const { data } = await axios.delete('/prints/1', config);
         return data;
     } catch (error) {
         throw error.response?.data || error.message;

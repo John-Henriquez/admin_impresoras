@@ -1,9 +1,8 @@
-// src/pages/UpdatePrint.jsx
 import React, { useState } from 'react';
 import { updatePrint } from '../services/print.service';
 
 const UpdatePrint = () => {
-    const [id, setId] = useState(''); // estado para almacenar el id de la impresion
+    const [identifier, setIdentifier] = useState(''); // estado para almacenar el id de la impresion
     const [updatedData, setUpdatedData] = useState({}); // estado para almacenar los datos actualizados
     const [message, setMessage] = useState(''); // estado para almacenar el mensaje de éxito
     const [error, setError] = useState(''); // estado para almacenar cualquier error
@@ -11,12 +10,22 @@ const UpdatePrint = () => {
     // funcion para manejar la actualización de la impresion
     const handleUpdate = async () => {
         try {
-            const data = await updatePrint(id, updatedData); // llama a la funcion updatePrint del servicio
+            const data = await updatePrint(identifier, updatedData); // llama a la funcion updatePrint del servicio
             setMessage('Impresión actualizada correctamente'); // establece el mensaje de éxito
             setError(''); // limpia cualquier error previo
         } catch (err) {
             setError(err); // actualiza el estado con el error
             setMessage(''); // limpia el mensaje de éxito
+        }
+    };
+
+    // Función para manejar el cambio en el textarea
+    const handleTextareaChange = (e) => {
+        try {
+            const updatedData = JSON.parse(e.target.value);
+            setUpdatedData(updatedData);
+        } catch (err) {
+            setError('Error al parsear el JSON');
         }
     };
 
@@ -28,8 +37,8 @@ const UpdatePrint = () => {
                     ID de Impresión:
                     <input
                         type="text"
-                        value={id}
-                        onChange={(e) => setId(e.target.value)} // actualiza el estado id
+                        value={identifier}
+                        onChange={(e) => setIdentifier(e.target.value)} // actualiza el estado id
                     />
                 </label>
             </div>
@@ -38,7 +47,7 @@ const UpdatePrint = () => {
                     Datos a Actualizar:
                     <textarea
                         value={JSON.stringify(updatedData, null, 2)}
-                        onChange={(e) => setUpdatedData(JSON.parse(e.target.value))} // actualiza el estado updatedData
+                        onChange={handleTextareaChange} // actualiza el estado updatedData
                     />
                 </label>
             </div>

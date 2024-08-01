@@ -76,6 +76,31 @@ const AppRouter = () => {
         } 
       />
       <Route 
+        path="/print/search" 
+        element={
+          <ProtectedRoute allowedRoles={['administrador']}>
+            <GetPrint />
+          </ProtectedRoute>
+        } 
+      />
+      <Route 
+        path="/print/update" 
+        element={
+          <ProtectedRoute allowedRoles={['administrador']}>
+            <UpdatePrint />
+          </ProtectedRoute>
+        } 
+      />
+      <Route 
+        path="/print/delete" 
+        element={
+          <ProtectedRoute allowedRoles={['administrador']}>
+            <DeletePrint />
+          </ProtectedRoute>
+        } 
+      />
+ 
+      <Route 
         path="/profile" 
         element={
           <ProtectedRoute>
