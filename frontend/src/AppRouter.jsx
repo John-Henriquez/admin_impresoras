@@ -112,7 +112,7 @@ const AppRouter = () => {
        <Route 
         path="/GetPrint" 
         element={
-          <ProtectedRoute>
+          <ProtectedRoute allowedRoles={['administrador']}>
             <GetPrint />
           </ProtectedRoute>
         } 
@@ -120,7 +120,7 @@ const AppRouter = () => {
       <Route 
         path="/UpdatePrint" 
         element={
-          <ProtectedRoute>
+          <ProtectedRoute allowedRoles={['administrador']}>
             <UpdatePrint />
           </ProtectedRoute>
         } 
@@ -128,7 +128,7 @@ const AppRouter = () => {
       <Route 
         path="/DeletePrint" 
         element={
-          <ProtectedRoute>
+          <ProtectedRoute allowedRoles={['administrador']}>
             <DeletePrint />
           </ProtectedRoute>
         } 

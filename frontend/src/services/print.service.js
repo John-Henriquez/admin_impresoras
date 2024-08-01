@@ -29,7 +29,7 @@ export async function getPrints() {
 }
 
 // Función para obtener impresiones por RUT o ID
-export async function getPrint(identifier) {
+export async function getPrintByUserRutOrId(identifier) {
     try {
         const config = {
             headers: {
@@ -41,7 +41,7 @@ export async function getPrint(identifier) {
             }
         };
         // Usar la ruta '/api/prints/1' ya que no podemos cambiar el backend
-        const { data } = await axios.get('/api/prints/1', config);
+        const { data } = await axios.get('/prints/${identifier}', config);
         return data;
     } catch (error) {
         throw error.response?.data || error.message;
@@ -56,14 +56,14 @@ export async function updatePrint(id, updatedData) {
                 'Cache-Control': 'no-cache'
             }
         };
-        const { data } = await axios.put(`/api/prints/${id}`, updatedData, config);
+        const { data } = await axios.put(`/prints/${id}`, updatedData, config);
         return data;
     } catch (error) {
         throw error.response?.data || error.message;
     }
 }
 
-// Función para eliminar una impresión
+// funcion para eliminar una impresion
 export async function deletePrint(id) {
     try {
         const config = {
@@ -71,7 +71,7 @@ export async function deletePrint(id) {
                 'Cache-Control': 'no-cache'
             }
         };
-        const { data } = await axios.delete(`/api/prints/${id}`, config);
+        const { data } = await axios.delete(`/prints/${id}`, config);
         return data;
     } catch (error) {
         throw error.response?.data || error.message;

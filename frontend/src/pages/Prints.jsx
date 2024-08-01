@@ -16,7 +16,7 @@ const Prints = () => {
                     <button onClick={() => navigate('/prints/all')}>ver todas las impresiones</button>
                     <button onClick={() => navigate('/prints/search')}>buscar impresion por rut o id</button>
                     <button onClick={() => navigate('/update-print')}>actualizar impresion</button>
-                    <button onClick={() => navigate('/delete-print')}>eliminar impresion</button> {/* Nuevo botón */}
+                    <button onClick={() => navigate('/delete-print')}>eliminar impresion</button> 
                 </div>
             </div>
         </main>
