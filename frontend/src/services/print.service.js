@@ -59,7 +59,7 @@ export async function updatePrint(identifier, updatedData) {
                 id: identifier
             }
         };
-        const { data } = await axios.put(`/prints/${identifier}`, updatedData, config);
+        const { data } = await axios.put(`/prints/1`, updatedData, config);
         return data;
     } catch (error) {
         throw error.response?.data || error.message;
