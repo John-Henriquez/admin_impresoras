@@ -51,7 +51,6 @@ const AllSupplies = () => {
     { Header: "ID", accessor: "_id" },
     { Header: "Nombre", accessor: "nombre" },
     { Header: "Cantidad", accessor: "cantidad" },
-    { Header: "Estado", accessor: "estado"},
     { Header: "Acción", accessor: "Acción" }  
   ];
   

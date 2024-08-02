@@ -76,18 +76,6 @@ const CreateSupplies = () => {
                             required
                         />
                     </div>
-                    <div>
-                        <label>Estado</label>
-                        <select
-                            name="status"
-                            value={suppliesData.status}
-                            onChange={handleChange}
-                            required
-                        >
-                            <option value="available">Disponible</option>
-                            <option value="unavailable">No Disponible</option>
-                        </select>
-                    </div>
                     <button type="submit">Crear</button>
                 </form>
             </div>

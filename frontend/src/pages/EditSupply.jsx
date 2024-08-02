@@ -22,7 +22,7 @@ const EditSupply = () => {
     return (
         <>
             <Navbar />
-            <div className="form-container">
+            <div className="main-container">
                 <div className="form-wrapper">
                     <Form
                         title="Editar suministro"
@@ -38,17 +38,6 @@ const EditSupply = () => {
                                 name: "cantidad",
                                 placeholder: supply.cantidad || "Cantidad",
                                 type: "number",
-                            },
-                            {
-                                label: "Estado",
-                                name: "status",
-                                type: "select",
-                                options: [
-                                    {value: "disponible", label: "Disponible" },
-                                    {value: "no disponible", label: "No disponible" },
-
-                                ],
-                                value: supply.status || "no disponible"
                             },
                         ]}
                         buttonText="Guardar cambios"
