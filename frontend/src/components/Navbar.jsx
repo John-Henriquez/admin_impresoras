@@ -22,8 +22,8 @@ const Navbar = () => {
             <ul>
                 <li>
                     <img
-                        src="/cohete.png"
-                        alt="Logo metodología de desarrollo"
+                        src="/ubb-white.png"
+                        alt="UBB"
                     />
                 </li>
                 <li className={location.pathname === "/home" ? "active" : ""}>
@@ -35,7 +35,7 @@ const Navbar = () => {
                             <NavLink to="/users">Usuarios</NavLink>
                         </li>
                         <li className={location.pathname === "/devices" ? "active" : ""}>
-                            <NavLink to="/devices">Devices</NavLink>
+                            <NavLink to="/devices">Dispositivos</NavLink>
                         </li>
                         <li className={location.pathname === "/prints" ? "active" : ""}>
                             <NavLink to="/prints">Prints</NavLink>
