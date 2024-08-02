@@ -13,9 +13,13 @@ import AllPrints from './pages/AllPrints';
 import CreateDevice from './pages/CreateDevice';
 import UpdateDevice from './pages/UpdateDevice';
 import CreatePrint from './pages/CreatePrint';
+import GetPrint from './pages/GetPrint';
+import UpdatePrint from './pages/UpdatePrint';
+import DeletePrint from './pages/DeletePrint';
 import Supplies from './pages/Supplies';
 import AllSupplies from './pages/AllSupplies';
 import CreateSupplies from './pages/CreateSupplies';
+import EditSupply from './pages/EditSupply';
 
 const AppRouter = () => {
   return (
@@ -61,6 +65,30 @@ const AppRouter = () => {
         element={
           <ProtectedRoute allowedRoles={['administrador']}>
             <AllPrints />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/print/search"
+        element={
+          <ProtectedRoute allowedRoles={['administrador']}>
+            <GetPrint />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/print/update"
+        element={
+          <ProtectedRoute allowedRoles={['administrador']}>
+            <UpdatePrint />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/print/delete"
+        element={
+          <ProtectedRoute allowedRoles={['administrador']}>
+            <DeletePrint />
           </ProtectedRoute>
         }
       />
@@ -130,8 +158,15 @@ const AppRouter = () => {
           </ProtectedRoute>
         }
       />
-
-
+      <Route
+        path="/edit-supply/:id"
+        element={
+          <ProtectedRoute allowedRoles={['administrador']}>
+            <EditSupply />
+          </ProtectedRoute>
+        }
+      />
+      
       <Route path="*" element={<Error404 />} />
     </Routes>
   );

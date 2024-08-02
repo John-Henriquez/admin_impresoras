@@ -2,8 +2,8 @@ import Form from "../components/Form.jsx";
 import Navbar from "../components/Navbar.jsx";
 import { updateUser } from "../services/user.service.js";
 import { useLocation, useNavigate } from "react-router-dom";
-const EditUser = () => {
 
+const EditUser = () => {
 	const location = useLocation();
 	const navigate = useNavigate();
 
