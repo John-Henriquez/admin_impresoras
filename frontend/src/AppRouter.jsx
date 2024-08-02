@@ -19,6 +19,7 @@ import DeletePrint from './pages/DeletePrint';
 import Supplies from './pages/Supplies';
 import AllSupplies from './pages/AllSupplies';
 import CreateSupplies from './pages/CreateSupplies';
+import EditSupply from './pages/EditSupply';
 
 const AppRouter = () => {
   return (
@@ -179,6 +180,14 @@ const AppRouter = () => {
         element={
           <ProtectedRoute allowedRoles={['administrador']}>
             <CreateSupplies />
+          </ProtectedRoute>
+        } 
+      />
+      <Route 
+        path="/edit-supply/:id"
+        element={
+          <ProtectedRoute allowedRoles={['administrador']}>
+            <EditSupply />
           </ProtectedRoute>
         } 
       />
