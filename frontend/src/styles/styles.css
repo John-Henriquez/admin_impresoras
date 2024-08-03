@@ -686,3 +686,177 @@ form .error-message {
         }
     }
 }
+
+.print-buttons {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #eef7ff;
+    background-color: #003366;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.print-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Usa una cuadrícula adaptable */
+    gap: 20px; /* Añade espacio entre los elementos */
+    padding: 20px; /* Espaciado alrededor de la lista */
+}
+
+.print-item {
+    background-color: #f5f5f5; /* Fondo gris claro para cada elemento */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 15px; /* Espaciado interno */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para efecto de elevación */
+    transition: transform 0.2s ease; /* Transición para efecto de hover */
+}
+
+.print-item:hover {
+    transform: translateY(-5px); /* Eleva el elemento en el hover */
+}
+
+.print-item p {
+    margin: 5px 0; /* Espacio entre párrafos */
+    font-size: 14px; /* Tamaño de fuente consistente */
+}
+
+.print-item button {
+    margin-top: 10px; /* Espacio superior para el botón */
+    background-color: #e63946; /* Color de fondo del botón */
+    color: #fff; /* Color de texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    padding: 8px 12px; /* Espaciado interno del botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+}
+
+.print-item button:hover {
+    background-color: #d62839; /* Color de fondo más oscuro en hover */
+}
+
+.print-create-page {
+    padding: 20px;
+}
+
+.print-sections {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 60px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.print-sections h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+.print-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre los elementos del formulario */
+}
+
+.print-form div {
+    display: flex;
+    flex-direction: column;
+}
+
+.print-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.print-form input[type="text"],
+.print-form input[type="number"],
+.print-form select {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.print-form input[type="text"]:focus,
+.print-form input[type="number"]:focus,
+.print-form select:focus {
+    border-color: #007bff; /* Color de borde en foco */
+    outline: none;
+}
+
+.print-form button[type="submit"] {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.print-form button[type="submit"]:hover {
+    background-color: #0056b3; /* Color de fondo más oscuro en hover */
+}
+
+.prints_page {
+    padding: 20px;
+    background-color: #f8f9fa; /* Fondo claro para la página */
+}
+
+.prints-menu-page {
+    padding: 20px;
+    background-color: #f8f9fa; /* Fondo claro para la página */
+}
+
+.prints-menu-sections {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 70px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.prints-menu-sections h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px; /* Aumenta el tamaño de la fuente */
+    color: #333; /* Color de texto oscuro para mejor legibilidad */
+    font-weight: bold;
+}
+
+.prints-menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos en el eje horizontal */
+    gap: 15px; /* Espacio entre los botones */
+}
+
+.prints-menu-buttons {
+    background-color: #003366;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-bottom: 10px; /* Espacio inferior entre botones */
+    width: 100%; /* Hacer que los botones ocupen todo el ancho del contenedor */
+    max-width: 400px; /* Limitar el ancho máximo para no exceder */
+    text-transform: capitalize; /* Capitalizar texto */
+}
+
+.prints-menu-buttons:hover {
+    background-color: #0056b3; /* Color más oscuro en hover */
+    transform: translateY(-3px); /* Elevar el botón ligeramente en hover */
+}
+
