@@ -37,7 +37,6 @@ export async function getPrint(identifier) {
             },
             params: {
                 userRut: identifier,
-                id: identifier
             }
         };
         

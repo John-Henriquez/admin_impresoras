@@ -1,5 +1,6 @@
 // src/pages/UpdatePrint.jsx
 import React, { useState } from 'react'; // Importa React y el hook useState para manejar estados
+import Navbar from '../components/Navbar';
 import { updatePrint } from '../services/print.service'; // Importa la función updatePrint del servicio print
 
 const UpdatePrint = () => {
@@ -67,39 +68,42 @@ const UpdatePrint = () => {
   };
 
   return (
-    <main className="update_print_page">
-      <h2>Actualizar Impresión</h2>
-      <form onSubmit={handleSubmit}> {/* Maneja el envío del formulario */}
-        <div>
-          <label>
-            ID de Impresión:
-            <input
-              type="text"
-              value={identifier} // Valor del input asociado al estado identifier
-              onChange={handleIdentifierChange} // Actualiza el estado identifier
-              placeholder="Introduce el ID de impresión"
-            />
-          </label>
+    <main className="prints-create-page">
+        <Navbar /> {/* Renderiza el componente Navbar */}
+        <div className="print-sections">
+            <h2>Actualizar Impresión</h2>
+            <form className= "print-form" onSubmit={handleSubmit}> {/* Maneja el envío del formulario */}
+                <div>
+                    <label>
+                        ID de Impresión:
+                        <input
+                            type="text"
+                            value={identifier} // Valor del input asociado al estado identifier
+                            onChange={handleIdentifierChange} // Actualiza el estado identifier
+                            placeholder="Introduce el ID de impresión"
+                        />
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        Datos a Actualizar:
+                        <textarea
+                            value={updatedData} // Valor del textarea asociado al estado updatedData
+                            onChange={handleTextareaChange} // Actualiza el estado updatedData
+                            placeholder='{"Dato que sea cambiar": "Dato"}'
+                            rows="10"
+                            cols="30"
+                        />
+                    </label>
+                </div>
+                <button type="submit">Actualizar</button> {/* Botón para iniciar la actualización */}
+            </form>
+            {loading && <h2>Cargando...</h2>} {/* Muestra un mensaje de carga */}
+            {message && <div>{message}</div>} {/* Muestra el mensaje de éxito */}
+            {error && <div style={{ color: 'red' }}>{error.message}</div>} {/* Muestra el error si existe */}
         </div>
-        <div>
-          <label>
-            Datos a Actualizar:
-            <textarea
-              value={updatedData} // Valor del textarea asociado al estado updatedData
-              onChange={handleTextareaChange} // Actualiza el estado updatedData
-              placeholder='{"clave": "valor"}'
-              rows="10"
-              cols="30"
-            />
-          </label>
-        </div>
-        <button type="submit">Actualizar</button> {/* Botón para iniciar la actualización */}
-      </form>
-      {loading && <h2>Cargando...</h2>} {/* Muestra un mensaje de carga */}
-      {message && <div>{message}</div>} {/* Muestra el mensaje de éxito */}
-      {error && <div style={{ color: 'red' }}>{error.message}</div>} {/* Muestra el error si existe */}
     </main>
-  );
+);
 };
 
 export default UpdatePrint; // Exporta el componente UpdatePrint
